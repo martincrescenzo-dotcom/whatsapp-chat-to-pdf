@@ -24,3 +24,5 @@ For court, HR, insurance, landlord or police files, the free script is not enoug
 ## License
 
 MIT
+
+See also: [telegram-chat-to-pdf](https://github.com/martincrescenzo-dotcom/telegram-chat-to-pdf), [discord-chat-to-pdf](https://github.com/martincrescenzo-dotcom/discord-chat-to-pdf).
