@@ -15,6 +15,15 @@ python3 whatsapp_to_html.py _chat.txt > chat.html
 
 3. Open `chat.html` in a browser and use *Print > Save as PDF*.
 
+## As a GitHub Action
+
+```yaml
+- uses: martincrescenzo-dotcom/whatsapp-chat-to-pdf@main
+  with:
+    input: exports/_chat.txt
+    output: chat.html
+```
+
 ## Need it as evidence?
 
 For court, HR, insurance, landlord or police files, the free script is not enough: you usually need numbered messages, a cover sheet, page numbers and a hash so the document can be shown to be unaltered.

@@ -1,0 +1,25 @@
+name: 'WhatsApp chat to PDF-ready HTML'
+description: 'Convert a WhatsApp chat export (_chat.txt) into a clean printable HTML file. Offline, no dependencies.'
+branding:
+  icon: 'file-text'
+  color: 'green'
+inputs:
+  input:
+    description: 'Path to the WhatsApp _chat.txt export'
+    required: true
+  output:
+    description: 'Path of the HTML file to write'
+    required: false
+    default: 'chat.html'
+outputs:
+  html:
+    description: 'Path of the generated HTML file'
+    value: ${{ steps.convert.outputs.html }}
+runs:
+  using: 'composite'
+  steps:
+    - id: convert
+      shell: bash
+      run: |
+        python3 "${{ github.action_path }}/whatsapp_to_html.py" "${{ inputs.input }}" > "${{ inputs.output }}"
+        echo "html=${{ inputs.output }}" >> "$GITHUB_OUTPUT"
